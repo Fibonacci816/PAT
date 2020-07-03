@@ -4,13 +4,14 @@ using namespace std;
 
 int main()
 {
-	long N;
-	scanf("%ld", &N);
-	double number, sum = 0;
+	int N;
+	scanf("%d", &N);
+	double number;
+    long long sum = 0;
 	for(int i = 0; i < N; i++){
 		scanf("%lf", &number);
-		sum += (N-i) * (i+1) * number;  //N为long类型，否则(N-i)*(i+1)会溢出；若N为int，这里需改为 sum += number * (N-i) * (i+1);
+		sum += (N-i)*(i+1) * (long long)(number * 1000);
 	} 
-	printf("%.2lf", sum);
+	printf("%.2lf", sum/1000.0);
 	return 0;
-} 
+ } 
